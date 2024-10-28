@@ -11,23 +11,29 @@ import Tools from "./components/tools";
 import Prices from "./components/prices";
 import FAQ from "./components/FAQ";
 import Footer from "./components/footer";
-
+import Signup from "./components/signup";
+import Login from "./components/login";
+import { Route, Routes } from "react-router-dom"; // Remove Router here
 
 function App() {
   return (
-    <div className=" bg-white dark:bg-gray-900  dark:text-white">
-      <ThemeProvider >
-      <Header/>
-      <Hero/>
-      <Process/>
-      <UploadImage/>
-      <Tools/>
-      <Prices/>
-      <FAQ/>
-      <Footer/>
-      <ThemeSwitch />
+    <div className="bg-white dark:bg-gray-900 dark:text-white">
+      <ThemeProvider>
+        <Header />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+        <Hero />
+        <Process />
+        <UploadImage />
+        <Tools />
+        <Prices />
+        <FAQ />
+        <Footer />
+        <ThemeSwitch />
       </ThemeProvider>
-      </div>
+    </div>
   );
 }
 
