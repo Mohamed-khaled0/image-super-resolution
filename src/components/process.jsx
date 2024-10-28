@@ -15,7 +15,6 @@ export default function Process() {
           Our photo Revive is quick, easy, and free to use. Just follow these three
           steps to bring your photo back to life in no time.
         </p>
-
         </motion.div>
         
         <div className="flex flex-col lg:flex-row lg:justify-center gap-6 lg:gap-8 mt-12 mx-4 ">
