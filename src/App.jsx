@@ -7,9 +7,12 @@ import Hero from "./components/hero";
 import { ThemeProvider } from "./components/theme-context";
 import Process from "./components/process";
 import UploadImage from "./components/uploadImage";
-import { div } from "framer-motion/client";
 import Tools from "./components/tools";
 import Prices from "./components/prices";
+import FAQ from "./components/FAQ";
+import Footer from "./components/footer";
+
+
 function App() {
   return (
     <div className=" bg-white dark:bg-gray-900  dark:text-white">
@@ -20,6 +23,8 @@ function App() {
       <UploadImage/>
       <Tools/>
       <Prices/>
+      <FAQ/>
+      <Footer/>
       <ThemeSwitch />
       </ThemeProvider>
       </div>

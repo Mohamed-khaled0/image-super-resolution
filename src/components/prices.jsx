@@ -16,7 +16,7 @@ export default function Prices() {
           </h2>
         </motion.div>
 
-        <div className="grid gap-8 md:grid-cols-3 ">
+        <div className="grid gap-8 md:grid-cols-3 text-center">
           {plans.map((plan) => (
             <motion.div
               key={plan.title}
@@ -29,6 +29,17 @@ export default function Prices() {
                 <h3 className={`text-3xl font-semibold mb-4 ${plan.isPremium ? "" : ""}`}>{plan.title}</h3>
                 <p className={`text-2xl font-bold mb-4 ${plan.isPremium ? "" : ""}`}>{plan.price}</p>
                 <ul className="mb-10 text-left">
+                  {/* Subscribe button taking full width */}
+                  <li className="mb-4">
+                    <a
+                      href={plan.link}
+                      className={`w-full inline-block py-2 px-10 rounded-lg transition duration-300 ${plan.buttonClass}`}
+                    >
+                        
+                      {plan.buttonText}
+                      
+                    </a>
+                  </li>
                   {plan.features.map((feature, index) => (
                     <li key={index} className="flex items-center mb-2">
                       {feature.icon}
@@ -37,12 +48,6 @@ export default function Prices() {
                   ))}
                 </ul>
               </div>
-              <a
-                href={plan.link}
-                className={`inline-block py-2 px-4 rounded-lg transition duration-300 ${plan.buttonClass}`}
-              >
-                {plan.buttonText}
-              </a>
             </motion.div>
           ))}
         </div>
@@ -62,8 +67,8 @@ const plans = [
     ],
     link: "/get-started",
     buttonText: "Get Started",
-    bgClass: "bg-white dark:bg-gray-800",
-    buttonClass: "bg-fuchsia-600 text-white hover:bg-fuchsia-700 dark:bg-fuchsia-500 dark:hover:bg-fuchsia-600",
+    bgClass: "bg-white dark:bg-gray-800 ",
+    buttonClass: "bg-fuchsia-600 text-white text-center hover:bg-fuchsia-700 dark:bg-fuchsia-500 dark:hover:bg-fuchsia-600",
   },
   {
     title: "Premium Plan",
@@ -77,8 +82,8 @@ const plans = [
     link: "/subscribe",
     buttonText: "Subscribe",
     bgClass: "bg-white dark:bg-gray-800",
-    buttonClass: "bg-fuchsia-600 text-white hover:bg-fuchsia-700",
-    isPremium: true, 
+    buttonClass: "bg-fuchsia-600 text-white text-center hover:bg-fuchsia-700",
+    isPremium: true,
   },
   {
     title: "Pro Plan",
@@ -93,6 +98,6 @@ const plans = [
     link: "/subscribe",
     buttonText: "Subscribe",
     bgClass: "bg-white dark:bg-gray-800",
-    buttonClass: "bg-fuchsia-600 text-white hover:bg-fuchsia-700",
+    buttonClass: "bg-fuchsia-600 text-white  text-center hover:bg-fuchsia-700",
   },
 ];
