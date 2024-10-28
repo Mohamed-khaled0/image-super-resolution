@@ -5,7 +5,7 @@ export default function UploadImage() {
   return (
 <section
       id="upload-section"
-      className="w-full lg:w-[70%] xl:w-[60%] 2xl:w-[60%] min-h-[55vh] mx-auto mb-20 flex flex-col justify-center items-center bg-white dark:bg-gray-900   dark:text-white rounded-3xl border-4 border-dashed border-fuchsia-500 p-2 md:p-6"
+      className="w-full lg:w-[70%] xl:w-[60%] 2xl:w-[60%] min-h-[55vh] mx-auto mb-20 flex flex-col justify-center items-center bg-white dark:bg-gray-900    dark:text-white rounded-3xl border-4 border-dashed border-fuchsia-500 p-2 md:p-6"
     >
       <RiUploadCloudFill className="text-fuchsia-500 w-32 h-32 md:w-40 md:h-40 mb-3 md:mb-5" />
       <h3 className="text-base md:text-lg mb-1 md:mb-2 dark:text-gray-100 " >
