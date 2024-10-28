@@ -1,12 +1,14 @@
+/* eslint-disable no-unused-vars */
+import React from "react";
+import ThemeSwitch from "../components/theme-switch";
 
 function App() {
-
   return (
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-       
-  )
+    <div className="App">
+      <h1 className="text-2xl font-bold ">Welcome to Dark Mode App</h1>
+      <ThemeSwitch />
+    </div>
+  );
 }
 
-export default App
+export default App;
