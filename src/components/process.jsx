@@ -10,7 +10,7 @@ export default function Process() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         >
-<h3 className="text-4xl font-bold mb-4 px-4 dark:text-fuchsia-400 text-gray-800">Revive Process</h3>
+<h3 className="text-4xl font-bold mb-4 px-4 dark:text-fuchsia-400  text-gray-800">Revive Process</h3>
         <p className="text-2xl mt-2 dark:text-white/[.7] text-gray-700 mb-8 px-8">
           Our photo Revive is quick, easy, and free to use. Just follow these three
           steps to bring your photo back to life in no time.
@@ -20,7 +20,7 @@ export default function Process() {
         <div className="flex flex-col lg:flex-row lg:justify-center gap-6 lg:gap-8 mt-12 mx-4 ">
           {/* Card 1 */}
           <motion.div 
-            className="bg-gradient-to-tl from-fuchsia-700 via-fuchsia-600 to-pink-600 p-6 text-white w-full  lg:w-80 rounded-2xl hover:shadow-xl  transition duration-300 ease-in-out flex flex-col items-center text-center"
+            className="dark:bg-gray-800 dark:text-white w-full  lg:w-80 rounded-2xl shadow-xl  transition duration-300 ease-in-out flex flex-col items-center text-center"
             initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.5 }}
@@ -42,7 +42,7 @@ export default function Process() {
           </motion.div>
           {/* Card 2 */}
           <motion.div 
-            className="bg-gradient-to-tl from-fuchsia-700 via-fuchsia-600 to-pink-600 p-6 text-white w-full lg:w-80 rounded-3xl hover:shadow-xl hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center"
+            className="dark:bg-gray-800 dark:text-white p-6  w-full lg:w-80 rounded-3xl shadow-xl hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center"
             initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.5 }}
@@ -65,7 +65,7 @@ export default function Process() {
           </motion.div>
           {/* Card 3 */}
           <motion.div 
-            className="bg-gradient-to-tl from-fuchsia-700 via-fuchsia-600 to-pink-600 p-6 text-white w-full lg:w-80 rounded-3xl hover:shadow-xl hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center"
+            className="dark:bg-gray-800 dark:text-white p-6  w-full lg:w-80 rounded-3xl shadow-xl hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center"
             initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.5 }}

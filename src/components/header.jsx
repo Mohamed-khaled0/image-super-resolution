@@ -57,7 +57,7 @@ const Header = () => {
         <nav id="nav-menu" className="hidden md:flex space-x-6 mr-3">
           {/* Navigation links */}
           <Link to="/" className="text-gray-900 dark:text-gray-100 hover:text-fuchsia-700 dark:hover:text-fuchsia-500 transition duration-300 ease-in-out text-xl">Home</Link>
-          <Link to="/revive" className="text-gray-900 dark:text-gray-100 hover:text-fuchsia-700 dark:hover:text-fuchsia-500 transition duration-300 ease-in-out text-xl">Revive</Link>
+          <Link  to="/upload-section" className="text-gray-900 dark:text-gray-100 hover:text-fuchsia-700 dark:hover:text-fuchsia-500 transition duration-300 ease-in-out text-xl">Revive</Link>
           <Link to="/tools" className="text-gray-900 dark:text-gray-100 hover:text-fuchsia-700 dark:hover:text-fuchsia-500 transition duration-300 ease-in-out text-xl">Tools</Link>
           <Link to="/plans" className="text-gray-900 dark:text-gray-100 hover:text-fuchsia-700 dark:hover:text-fuchsia-500 transition duration-300 ease-in-out text-xl">Plans</Link>
           <Link to="/faq" className="text-gray-900 dark:text-gray-100 hover:text-fuchsia-700 dark:hover:text-fuchsia-500 transition duration-300 ease-in-out text-xl">FAQ</Link>
