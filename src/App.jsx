@@ -9,6 +9,7 @@ import Process from "./components/process";
 import UploadImage from "./components/uploadImage";
 import { div } from "framer-motion/client";
 import Tools from "./components/tools";
+import Prices from "./components/prices";
 function App() {
   return (
     <div className=" bg-white dark:bg-gray-900  dark:text-white">
@@ -18,6 +19,7 @@ function App() {
       <Process/>
       <UploadImage/>
       <Tools/>
+      <Prices/>
       <ThemeSwitch />
       </ThemeProvider>
       </div>
