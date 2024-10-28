@@ -1,13 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import ThemeSwitch from "../components/theme-switch";
-
+import ThemeSwitch from "./components/theme-switch";
+import './index.css'
+import Header from "./components/header";
+import Hero from "./components/hero";
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-2xl font-bold ">Welcome to Dark Mode App</h1>
+       <>
       <ThemeSwitch />
-    </div>
+      <Header/>
+      <Hero/>
+      </>
   );
 }
 
