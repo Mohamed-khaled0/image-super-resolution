@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function Process() {
   return (
-    <section className="py-12 fade-in  bg-white dark:bg-gray-900  dark:text-white">
+    <section  id="process" className="py-12 fade-in  bg-white dark:bg-gray-900  dark:text-white">
       <div className="container mx-auto text-center">
         <motion.div
         initial={{ opacity: 0, y: 100 }}
@@ -20,7 +20,7 @@ export default function Process() {
         <div className="flex flex-col lg:flex-row lg:justify-center gap-6 lg:gap-8 mt-12 mx-4 ">
           {/* Card 1 */}
           <motion.div 
-            className="dark:bg-gray-800 dark:text-white w-full  lg:w-80 rounded-2xl shadow-xl  transition duration-300 ease-in-out flex flex-col items-center text-center"
+            className="dark:bg-gray-800 dark:text-white w-full p-6 lg:w-80 rounded-2xl shadow-xl  transition duration-300 ease-in-out flex flex-col items-center text-center"
             initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.5 }}

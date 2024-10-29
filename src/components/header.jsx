@@ -1,29 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 import { motion, useAnimation } from 'framer-motion';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const controls = useAnimation();
+  const location = useLocation(); // Get the current location
 
-  // Toggles the mobile menu
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
   };
 
-  // Closes the menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (!e.target.closest("#mobile-menu") && !e.target.closest("#burger-menu")) {
         setIsMobileMenuOpen(false);
       }
     };
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Animate the mobile menu
   useEffect(() => {
     if (isMobileMenuOpen) {
       controls.start({ opacity: 1, y: 0, transition: { duration: 0.3 } });
@@ -32,19 +32,20 @@ const Header = () => {
     }
   }, [isMobileMenuOpen, controls]);
 
-  return (
-    <header className="py-4 shadow-md fade-inbg-white dark:bg-gray-900 text-gray-800 dark:shadow-xl bg-white dark:text-white transition duration-300 fixed z-10 w-full">
-      <div className="container mx-auto flex justify-between items-center px-6">
-        {/* Logo */}
-        <Link to="/" className="text-3xl font-bold">
-          Photo<span className="text-fuchsia-800 dark:text-fuchsia-500">Revive</span>
-        </Link>
+  // Determine if the current page is login, signup, or payment
+  const isAuthPage = ['/login', '/signup', '/payment'].includes(location.pathname);
 
-        {/* Burger Menu Icon */}
+  return (
+    <header className="py-4 shadow-md bg-white dark:bg-gray-900 text-gray-800 dark:text-white transition duration-300 fixed z-10 w-full">
+      <div className="container mx-auto flex justify-between items-center px-6">
+        <RouterLink to="/" className="text-3xl font-bold cursor-pointer">
+          Photo<span className="text-fuchsia-800 dark:text-fuchsia-500">Revive</span>
+        </RouterLink>
+
         <button
           id="burger-menu"
           onClick={toggleMobileMenu}
-          className="md:hidden flex items-center px-3 py-2 border rounded text-gray-900 border-gray-900 dark:text-gray-100 dark:border-gray-100 transition duration-300 ease-in-out"
+          className="md:hidden flex items-center px-3 py-2 border rounded text-gray-900 border-gray-900 dark:text-gray-100 dark:border-gray-100 transition duration-300"
         >
           {isMobileMenuOpen ? (
             <FaTimes className="h-5 w-5 transform rotate-180 transition-transform duration-300" />
@@ -53,51 +54,43 @@ const Header = () => {
           )}
         </button>
 
-        {/* Navigation Menu for Desktop */}
-        <nav id="nav-menu" className="hidden md:flex space-x-6 mr-3">
-          {/* Navigation links */}
-          <Link to="/" className="text-gray-900 dark:text-gray-100 hover:text-fuchsia-700 dark:hover:text-fuchsia-500 transition duration-300 ease-in-out text-xl">Home</Link>
-          <Link  to="/upload-section" className="text-gray-900 dark:text-gray-100 hover:text-fuchsia-700 dark:hover:text-fuchsia-500 transition duration-300 ease-in-out text-xl">Revive</Link>
-          <Link to="/tools" className="text-gray-900 dark:text-gray-100 hover:text-fuchsia-700 dark:hover:text-fuchsia-500 transition duration-300 ease-in-out text-xl">Tools</Link>
-          <Link to="/plans" className="text-gray-900 dark:text-gray-100 hover:text-fuchsia-700 dark:hover:text-fuchsia-500 transition duration-300 ease-in-out text-xl">Plans</Link>
-          <Link to="/faq" className="text-gray-900 dark:text-gray-100 hover:text-fuchsia-700 dark:hover:text-fuchsia-500 transition duration-300 ease-in-out text-xl">FAQ</Link>
-          <Link to="/contact" className="text-gray-900 dark:text-gray-100 hover:text-fuchsia-700 dark:hover:text-fuchsia-500 transition duration-300 ease-in-out text-xl">Contact</Link>
-        </nav>
-
-        {/* Action Buttons for Desktop */}
-        <div className="hidden md:flex space-x-4">
-          <Link
-            to="/login"
-            className="text-fuchsia-700 border border-fuchsia-700 px-2 py-1 md:px-4 md:py-2 text-sm md:text-base rounded-lg hover:bg-fuchsia-700 hover:text-white dark:hover:bg-fuchsia-500 transition duration-300 ease-in-out"
-          >
-            LogIn
-          </Link>
-          <Link
-            to="/signup"
-            className="bg-fuchsia-700 text-white px-2 py-1 md:px-4 md:py-2 text-sm md:text-base rounded-lg hover:bg-fuchsia-800 dark:hover:bg-fuchsia-500 transition duration-300 ease-in-out"
-          >
-            SignUp
-          </Link>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <motion.div
-            id="mobile-menu"
-            initial={{ opacity: 0, y: -20 }}
-            animate={controls}
-            className="absolute text-[1.1rem] top-16 left-0 w-full bg-white dark:bg-gray-900 shadow-md md:hidden flex flex-wrap gap-4 items-center justify-center py-4 space-y-4"
-          >
-            <Link to="/" onClick={toggleMobileMenu} className="text-gray-700 dark:text-gray-100 hover:text-fuchsia-700 dark:hover:text-fuchsia-500 transition duration-300 ease-in-out">Home</Link>
-            <Link to="/revive" onClick={toggleMobileMenu} className="text-gray-700 dark:text-gray-100 hover:text-fuchsia-700 dark:hover:text-fuchsia-500 transition duration-300 ease-in-out">Revive</Link>
-            <Link to="/tools" onClick={toggleMobileMenu} className="text-gray-700 dark:text-gray-100 hover:text-fuchsia-700 dark:hover:text-fuchsia-500 transition duration-300 ease-in-out">Tools</Link>
-            <Link to="/plans" onClick={toggleMobileMenu} className="text-gray-700 dark:text-gray-100 hover:text-fuchsia-700 dark:hover:text-fuchsia-500 transition duration-300 ease-in-out">Plans</Link>
-            <Link to="/faq" onClick={toggleMobileMenu} className="text-gray-700 dark:text-gray-100 hover:text-fuchsia-700 dark:hover:text-fuchsia-500 transition duration-300 ease-in-out">FAQ</Link>
-            <Link to="/contact" onClick={toggleMobileMenu} className="text-gray-700 dark:text-gray-100 hover:text-fuchsia-700 dark:hover:text-fuchsia-500 transition duration-300 ease-in-out">Contact</Link>
-            <Link to="/login" onClick={toggleMobileMenu} className="text-fuchsia-700 border border-fuchsia-700 px-3 py-1 rounded-lg hover:bg-fuchsia-700 hover:text-white dark:hover:bg-fuchsia-500 transition duration-300 ease-in-out">Log In</Link>
-            <Link to="/signup" onClick={toggleMobileMenu} className="bg-fuchsia-700 text-white px-3 py-1 rounded-lg hover:bg-fuchsia-800 dark:hover:bg-fuchsia-500 transition duration-300 ease-in-out">Sign Up</Link>
-          </motion.div>
+        {/* Conditionally render navigation links */}
+        {!isAuthPage && (
+          <nav id="nav-menu" className="hidden md:flex space-x-6 mr-3">
+            <ScrollLink to="hero-section"  duration={500} offset={-70} className="text-xl cursor-pointer hover:text-fuchsia-500 transition duration-200">Home</ScrollLink>
+            <ScrollLink to="upload-section"  duration={500} offset={-70} className="text-xl cursor-pointer hover:text-fuchsia-500 transition duration-200">Revive</ScrollLink>
+            <ScrollLink to="tools"  duration={500} offset={-70} className="text-xl cursor-pointer hover:text-fuchsia-500 transition duration-200">Tools</ScrollLink>
+            <ScrollLink to="plans"  duration={500} offset={-70} className="text-xl cursor-pointer hover:text-fuchsia-500 transition duration-200">Plans</ScrollLink>
+            <ScrollLink to="faq"  duration={500} offset={-70} className="text-xl cursor-pointer hover:text-fuchsia-500 transition duration-200">FAQ</ScrollLink>
+          </nav>
         )}
+
+        {/* Show Login and Signup buttons */}
+        {!isAuthPage && (
+          <div className="hidden md:flex space-x-4">
+            <RouterLink to="/login" className="text-fuchsia-700 border px-3 py-2 rounded-lg hover:bg-fuchsia-700 hover:text-white transition duration-300 cursor-pointer">Log In</RouterLink>
+            <RouterLink to="/signup" className="bg-fuchsia-700 text-white px-3 py-2 rounded-lg hover:bg-fuchsia-800 transition duration-300 cursor-pointer">Sign Up</RouterLink>
+          </div>
+        )}
+
+{isMobileMenuOpen && !isAuthPage && (
+  <motion.div
+    id="mobile-menu"
+    initial={{ opacity: 0, y: -20 }}
+    animate={controls}
+    className="absolute top-16 left-0 w-full bg-white dark:bg-gray-900 shadow-md md:hidden flex flex-row justify-center gap-4 items-center py-4 cursor-pointer"
+  >
+    <ScrollLink to="hero-section"  duration={500} onClick={toggleMobileMenu} className="text-gray-700 dark:text-gray-100 hover:text-fuchsia-500 transition duration-200">Home</ScrollLink>
+    <ScrollLink to="upload-section"  duration={500} onClick={toggleMobileMenu} className="text-gray-700 dark:text-gray-100 hover:text-fuchsia-500 transition duration-200">Revive</ScrollLink>
+    <ScrollLink to="tools"  duration={500} onClick={toggleMobileMenu} className="text-gray-700 dark:text-gray-100 hover:text-fuchsia-500 transition duration-200">Tools</ScrollLink>
+    <ScrollLink to="plans"  duration={500} onClick={toggleMobileMenu} className="text-gray-700 dark:text-gray-100 hover:text-fuchsia-500 transition duration-200">Plans</ScrollLink>
+    <ScrollLink to="faq"  duration={500} onClick={toggleMobileMenu} className="text-gray-700 dark:text-gray-100 hover:text-fuchsia-500 transition duration-200">FAQ</ScrollLink>
+    
+    {/* Login and Signup Links in Mobile Menu */}
+    <RouterLink to="/login" onClick={toggleMobileMenu} className="text-fuchsia-700 border px-4 py-1 rounded-lg">Log In</RouterLink>
+    <RouterLink to="/signup" onClick={toggleMobileMenu} className="bg-fuchsia-700 text-white px-3 py-1 rounded-lg">Sign Up</RouterLink>
+  </motion.div>
+)}
       </div>
     </header>
   );

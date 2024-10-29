@@ -5,7 +5,7 @@ import { FaCreditCard, FaPaypal, FaApplePay, FaGoogleWallet } from "react-icons/
 export default function PaymentPage() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
-      <div className="max-w-lg w-full bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+      <div className="max-w-lg w-full bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8  mt-[10rem]">
         <h2 className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-fuchsia-400">
           Payment Page
         </h2>

@@ -13,16 +13,19 @@ export default function Prices() {
           </h2>
         </motion.div>
 
-        <div className="grid gap-8 md:grid-cols-3 text-center">
+        <div className="grid gap-8 md:grid-cols-3 text-center ">
           {plans.map((plan) => (
             <motion.div
               key={plan.title}
-              className={`p-6 rounded-lg shadow-xl transform transition-transform duration-300 hover:scale-105 hover:shadow-xl cursor-pointer ${plan.bgClass} ${plan.isPremium ? "border-[1px] border-fuchsia-600" : ""}`}
+              className={`p-6 rounded-lg shadow-xl transform transition-transform duration-300 cursor-pointer ${plan.bgClass} ${plan.isPremium ? "border-[1px] border-fuchsia-600" : ""}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.2 }}
+              whileHover={{
+                scale: 1.02, 
+              }}
             >
-              <div>
+              <div className="">
                 <h3 className="text-3xl font-semibold mb-4">{plan.title}</h3>
                 <p className="text-2xl font-bold mb-4">{plan.price}</p>
                 <ul className="mb-10 text-left">
@@ -92,6 +95,6 @@ const plans = [
     link: "/payment",
     buttonText: "Subscribe",
     bgClass: "bg-white dark:bg-gray-800",
-    buttonClass: "bg-fuchsia-600 text-white  text-center hover:bg-fuchsia-700",
+    buttonClass: "bg-fuchsia-600 text-white text-center hover:bg-fuchsia-700",
   },
 ];

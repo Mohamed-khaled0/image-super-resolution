@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from "react-scroll";
 
 export default function Hero() {
   return (
-    <section className="fade-in bg-white dark:bg-gray-900 text-gray-800 dark:text-white py-[10rem] sm:py-[2rem] ">
+    <section  className="hero-section bg-white dark:bg-gray-900 text-gray-800 dark:text-white py-[10rem] sm:py-[2rem] ">
       <div className="container mx-auto flex flex-col sm:flex-col xl:flex-row xl:items-center mt-[4rem]">
         {/* Left Text Section */}
         <motion.div
@@ -20,11 +22,17 @@ export default function Hero() {
             JPEG, PNG, BMP, WEBP, and more. Your old images can be instantly
             restored online by removing scratches, tears, spots, dust, and sepia.
           </p>
-          <button
-            className="bg-gradient-to-r from-fuchsia-700 via-fuchsia-600 to-pink-600 dark:from-fuchsia-500 dark:via-pink-500 dark:to-pink-400 text-xl text-white px-6 py-3 rounded-lg hover:scale-105 transition duration-300 ease-in-out"
-          >
-            Get Started
-          </button>
+          <ScrollLink
+        to="process"
+        duration={500}
+        offset={-50} 
+      >
+        <button
+          className="bg-gradient-to-r from-fuchsia-700 via-fuchsia-600 to-pink-600 dark:from-fuchsia-500 dark:via-pink-500 dark:to-pink-400 text-xl text-white px-6 py-3 rounded-lg hover:scale-105 transition duration-300 ease-in-out"
+        >
+          Get Started
+        </button>
+      </ScrollLink>
         </motion.div>
 
         {/* Right Image Section */}

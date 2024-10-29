@@ -1,7 +1,7 @@
 // App.js
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import ThemeSwitch from "./components/theme-switch";
-import './index.css';
 import Header from "./components/header";
 import Hero from "./components/hero";
 import { ThemeProvider } from "./components/theme-context";
@@ -9,27 +9,26 @@ import Process from "./components/process";
 import UploadImage from "./components/uploadImage";
 import Tools from "./components/tools";
 import Prices from "./components/prices";
-import FAQ from "./components/FAQ";
+import FAQ from "./components/faq";
 import Footer from "./components/footer";
 import Signup from "./components/signup";
 import Login from "./components/login";
 import PaymentPage from "./components/paymentpage";
-import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="bg-white dark:bg-gray-900 dark:text-white">
+    <div className="dark:bg-gray-900 dark:text-white">
       <ThemeProvider>
         <Header />
         <Routes>
           <Route path="/" element={
             <>
               <Hero />
-              <Process />
-              <UploadImage />
-              <Tools />
-              <Prices /> 
-              <FAQ />
+              <section id="process"><Process /></section>
+              <section id="upload-section"><UploadImage /></section>
+              <section id="tools"><Tools /></section>
+              <section id="plans"><Prices /></section>
+              <section id="faq"><FAQ /></section>
             </>
           } />
           <Route path="/login" element={<Login />} />

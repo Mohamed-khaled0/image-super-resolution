@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const FAQ = () => {
   const [expandedItems, setExpandedItems] = useState([false, false, false]);
@@ -39,35 +40,41 @@ const FAQ = () => {
               key={index}
               className={`faq-item rounded-lg shadow-md bg-white dark:bg-gray-800 cursor-pointer`}
             >
-              <button
+              <motion.button
                 className="w-full text-left text-xl font-semibold flex items-center justify-between p-6 text-gray-900 dark:text-white"
                 onClick={() => toggleFAQ(index)}
               >
                 <span>{item.question}</span>
-                <svg
-                  className={`w-6 h-6 transform transition-transform duration-300 ease-in-out ${expandedItems[index] ? 'rotate-180' : ''}`}
+                <motion.svg
+                  className={`w-6 h-6 transition-transform duration-300 ease-in-out ${expandedItems[index] ? 'rotate-180' : ''}`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
+                  animate={{ rotate: expandedItems[index] ? 180 : 0 }} 
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <div className={`faq-answer transition-all duration-300 ease-in-out`}>
+                </motion.svg>
+              </motion.button>
+              <motion.div
+                className={`faq-answer`}
+                initial={{ height: 0 }} 
+                animate={{ height: expandedItems[index] ? 'auto' : 0 }} 
+                transition={{ duration: 0.3 }} 
+              >
                 {expandedItems[index] && (
                   <div className={`p-4 text-gray-900 dark:text-gray-300`}>
                     <p>{item.answer}</p>
                   </div>
                 )}
-              </div>
+              </motion.div>
             </div>
           ))}
         </div>
         <div className="text-center mt-6">
           <button 
             onClick={handleShowMore} 
-            className="text-blue-500 font-semibold hover:underline"
+            className="text-fuchsia-500 p-2 border-2 border-fuchsia-500 rounded-lg font-semibold hover:text-white hover:bg-fuchsia-500 duration-150 transition-all"
           >
             {showMore ? "Show Less" : "Show More"}
           </button>

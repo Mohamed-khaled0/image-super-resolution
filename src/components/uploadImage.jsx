@@ -14,7 +14,7 @@ export default function UploadImage() {
       <p className="text-sm md:text-base dark:text-gray-400">
         Drag and drop your image here to upload
       </p>
-      <label className="text-xl bg-gradient-to-r from-fuchsia-700 via-fuchsia-600 to-pink-600 text-white px-6 py-3 mt-6 rounded-lg hover:scale-105 transition duration-300 ease-in-out">
+      <label className="text-xl bg-gradient-to-r from-fuchsia-700 via-fuchsia-600 to-pink-600 cursor-pointer text-white px-6 py-3 mt-6 rounded-lg hover:scale-105 transition duration-300 ease-in-out">
         <input type="file" id="file-input" className="hidden" />
         Upload Image
       </label>
