@@ -37,7 +37,7 @@ export default function Tools() {
             easily with AI technology.
           </p>
         </motion.div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8  cursor-pointer mt-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-8  cursor-pointer mt-14">
           {tools.map((tool) => (
             <motion.div
               key={tool.title}

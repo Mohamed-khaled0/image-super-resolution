@@ -9,7 +9,7 @@ import Process from "./components/process";
 import UploadImage from "./components/uploadImage";
 import Tools from "./components/tools";
 import Prices from "./components/prices";
-import FAQ from "./components/faq";
+import FAQ from "./components/FAQ";
 import Footer from "./components/footer";
 import Signup from "./components/signup";
 import Login from "./components/login";
