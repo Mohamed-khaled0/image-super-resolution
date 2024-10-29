@@ -21,7 +21,7 @@ export default function Tools() {
   return (
     <section
       id="explore-tools"
-      className="py-12 bg-white dark:bg-gray-900 dark:text-white"
+      className="py-12 bg-white dark:bg-gray-900 dark:text-white "
     >
       <div className="container mx-auto px-6">
         <motion.div
@@ -37,7 +37,7 @@ export default function Tools() {
             easily with AI technology.
           </p>
         </motion.div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-8 cursor-pointer">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8  cursor-pointer mt-14">
           {tools.map((tool) => (
             <motion.div
               key={tool.title}

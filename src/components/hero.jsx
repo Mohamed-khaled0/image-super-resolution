@@ -1,12 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from "react-scroll";
 
 export default function Hero() {
   return (
-    <section  className="hero-section bg-white dark:bg-gray-900 text-gray-800 dark:text-white py-[10rem] sm:py-[2rem] ">
-      <div className="container mx-auto flex flex-col sm:flex-col xl:flex-row xl:items-center mt-[4rem]">
+    <section  className="hero-section bg-white dark:bg-gray-900 text-gray-800 dark:text-white py-[3rem]  ">
+      <div className="container  w-[80%] mx-auto flex flex-col sm:flex-col xl:flex-row xl:items-center mt-[4rem]">
         {/* Left Text Section */}
         <motion.div
           className="w-full xl:w-1/2 xl:pr-12 text-center xl:text-left mb-10 mt-4 px-4 font-medium !leading-[1.5] sm:text-5xl lg:text-6xl"

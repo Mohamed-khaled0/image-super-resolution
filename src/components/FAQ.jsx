@@ -31,22 +31,22 @@ const FAQ = () => {
   return (
     <section id="faq" className="py-12 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-fuchsia-400">
+        <h2 className="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-fuchsia-400 ">
           Frequently Asked Questions
         </h2>
         <div className="space-y-4">
           {questions.slice(0, showMore ? questions.length : 3).map((item, index) => (
             <div
               key={index}
-              className={`faq-item rounded-lg shadow-md bg-white dark:bg-gray-800 cursor-pointer`}
+              className={`faq-item rounded-lg shadow-md bg-white dark:bg-gray-800 cursor-pointer `}
             >
               <motion.button
-                className="w-full text-left text-xl font-semibold flex items-center justify-between p-6 text-gray-900 dark:text-white"
+                className="w-full text-left text-xl font-semibold flex items-center justify-between   p-6 text-gray-900 dark:text-white"
                 onClick={() => toggleFAQ(index)}
               >
                 <span>{item.question}</span>
                 <motion.svg
-                  className={`w-6 h-6 transition-transform duration-300 ease-in-out ${expandedItems[index] ? 'rotate-180' : ''}`}
+                  className={`w-6 h-6 transition-transform duration-300  ease-in-out ${expandedItems[index] ? 'rotate-180' : ''}`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

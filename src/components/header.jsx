@@ -36,9 +36,9 @@ const Header = () => {
   const isAuthPage = ['/login', '/signup', '/payment'].includes(location.pathname);
 
   return (
-    <header className="py-4 shadow-md bg-white dark:bg-gray-900 text-gray-800 dark:text-white transition duration-300 fixed z-10 w-full">
-      <div className="container mx-auto flex justify-between items-center px-6">
-        <RouterLink to="/" className="text-3xl font-bold cursor-pointer">
+    <header className="py-4 shadow-md  bg-white dark:bg-gray-900 text-gray-800 dark:text-white transition duration-300 fixed z-10 w-full">
+      <div className="container w-[80%]  mx-auto flex justify-between items-center px-6">
+        <RouterLink to="/" className=" text-3xl font-bold cursor-pointer">
           Photo<span className="text-fuchsia-800 dark:text-fuchsia-500">Revive</span>
         </RouterLink>
 
