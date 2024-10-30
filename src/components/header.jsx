@@ -67,9 +67,9 @@ const Header = () => {
 
         {/* Show Login and Signup buttons */}
         {!isAuthPage && (
-          <div className="hidden md:flex space-x-4">
-            <RouterLink to="/login" className="text-fuchsia-700 border px-3 py-2 rounded-lg hover:bg-fuchsia-700 hover:text-white transition duration-300 cursor-pointer">Log In</RouterLink>
-            <RouterLink to="/signup" className="bg-fuchsia-700 text-white px-3 py-2 rounded-lg hover:bg-fuchsia-800 transition duration-300 cursor-pointer">Sign Up</RouterLink>
+          <div className="hidden md:flex  space-x-4">
+            <RouterLink to="/login" className="text-fuchsia-700 border px-1 py-1 rounded-lg hover:bg-fuchsia-700 hover:text-white transition duration-300 cursor-pointer">Log In</RouterLink>
+            <RouterLink to="/signup" className="bg-fuchsia-700 text-white px-1 py-1 rounded-lg hover:bg-fuchsia-800 transition duration-300 cursor-pointer">Sign Up</RouterLink>
           </div>
         )}
 
@@ -78,7 +78,7 @@ const Header = () => {
     id="mobile-menu"
     initial={{ opacity: 0, y: -20 }}
     animate={controls}
-    className="absolute top-16 left-0 w-full bg-white dark:bg-gray-900 shadow-md md:hidden flex flex-row justify-center gap-4 items-center py-4 cursor-pointer"
+    className="absolute top-16 left-0 w-full bg-white dark:bg-gray-900 shadow-md md:hidden flex flex-row flex-wrap  justify-center gap-4 items-center py-4 cursor-pointer"
   >
     <ScrollLink to="hero-section"  duration={500} onClick={toggleMobileMenu} className="text-gray-700 dark:text-gray-100 hover:text-fuchsia-500 transition duration-200">Home</ScrollLink>
     <ScrollLink to="upload-section"  duration={500} onClick={toggleMobileMenu} className="text-gray-700 dark:text-gray-100 hover:text-fuchsia-500 transition duration-200">Revive</ScrollLink>
@@ -87,8 +87,8 @@ const Header = () => {
     <ScrollLink to="faq"  duration={500} onClick={toggleMobileMenu} className="text-gray-700 dark:text-gray-100 hover:text-fuchsia-500 transition duration-200">FAQ</ScrollLink>
     
     {/* Login and Signup Links in Mobile Menu */}
-    <RouterLink to="/login" onClick={toggleMobileMenu} className="text-fuchsia-700 border px-4 py-1 rounded-lg">Log In</RouterLink>
-    <RouterLink to="/signup" onClick={toggleMobileMenu} className="bg-fuchsia-700 text-white px-3 py-1 rounded-lg">Sign Up</RouterLink>
+    <RouterLink to="/login" onClick={toggleMobileMenu} className="text-fuchsia-700 border px-1 py-1 rounded-lg">Log In</RouterLink>
+    <RouterLink to="/signup" onClick={toggleMobileMenu} className="bg-fuchsia-700 text-white px-1 py-1 rounded-lg">Sign Up</RouterLink>
   </motion.div>
 )}
       </div>
